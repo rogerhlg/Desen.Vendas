@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Principal {
@@ -6,13 +7,13 @@ public class Principal {
 		int opcao;
 		String nome,cpf;
 		Scanner sc = new Scanner(System.in);
-		Cliente cliente = new Cliente();
 		Vendedor vendedor = new Vendedor();
 		Produto produto = new Produto();
+		ArrayList<Cliente> clientes = new ArrayList <Cliente>();
 		do {
 			System.out.println("## MENU ##");
 			System.out.println("1-Cadastrar Cliente");
-			System.out.println("2-");
+			System.out.println("2-Listar Clientes");
 			System.out.println("3-Cadastrar Vendedor");
 			System.out.println("4-");
 			System.out.println("5-Cadastrar Produto");
@@ -20,6 +21,8 @@ public class Principal {
 			opcao = sc.nextInt();
 			switch(opcao){
 				case 1:
+					Cliente cliente = new Cliente();
+										
 					System.out.println("Insira seu NOME: ");
 					cliente.setNome(sc.next());
 					System.out.println(cliente.getNome());
@@ -28,10 +31,16 @@ public class Principal {
 					cliente.setCpf(sc.next());
 					System.out.println(cliente.getCpf());
 					
+					clientes.add(cliente);
+					
+					System.out.println(cliente);
 //					Cliente cliente = new Cliente("cpf","nome"); - CONSTRUCTOR
 				break;
 				
 				case 2:
+					System.out.println("### LISTA CLIENTES ###");
+					System.out.println(clientes);
+					
 					
 				break;
 				
@@ -64,7 +73,7 @@ public class Principal {
 		}while(opcao!=0);
 		
 		
-		System.out.println("Insira seu CPF");
+		
 		
 
 	}
